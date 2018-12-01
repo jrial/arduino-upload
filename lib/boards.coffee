@@ -131,13 +131,23 @@ module.exports =
 			
 			op = new Option()
 			op.value = ''
-			op.text = '== Arduino Setting =='
+			op.text = 'Use Arduino IDE Setting'
 			@selectNode.options.add op
-			op = new Option()
-			op.value = 'ignore'
-			op.text = '== Custom Setting =='
-			@selectNode.options.add op
+			prev_family = ''
 			for board of @boards
+				family = board.split(':')[0]
+				if family != prev_family
+					prev_family = family
+					# Separator to make families stand out
+					op = new Option()
+					op.value = 'ignore'
+					op.text = ''
+					@selectNode.options.add op
+					# Family name.
+					op = new Option()
+					op.value = 'ignore'
+					op.text = '[' + family.toUpperCase() + ']'
+					@selectNode.options.add op
 				op = new Option()
 				op.value = board
 				op.text = @boards[board]
