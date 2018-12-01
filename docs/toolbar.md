@@ -12,33 +12,33 @@ The following is an example for the Flex Tool Bar's configuration file, `toolbar
 ```coffeescript
 [
   {
-    type: "button"
-    icon: "check"
-    callback: ["core:save", "arduino-upload:verify"]
+    type: "button",
+    icon: "check",
+    callback: ["core:save", "arduino-upload:verify"],
     tooltip: "Arduino: Verify",
     enable: { grammar: "arduino" }
-  }
+  },
   {
-    type: "button"
-    icon: "arrow-right"
-    callback: ["core:save", "arduino-upload:upload"]
+    type: "button",
+    icon: "arrow-right",
+    callback: ["core:save", "arduino-upload:upload"],
     tooltip: "Arduino: Upload",
     enable: { grammar: "arduino" }
-  }
+  },
   {
-    type: "button"
-    icon: "terminal"
-    callback: "arduino-upload:serial-monitor"
+    type: "button",
+    icon: "terminal",
+    callback: "arduino-upload:serial-monitor",
     tooltip: "Arduino: Serial monitor",
     enable: { grammar: "arduino" }
-  }
+  },
   {
     type: "spacer"
-  }
+  },
   {
-    type: "button"
-    icon: "gear"
-    callback: "flex-tool-bar:edit-config-file"
+    type: "button",
+    icon: "gear",
+    callback: "flex-tool-bar:edit-config-file",
     tooltip: "Edit Tool Bar"
   }
 ]
